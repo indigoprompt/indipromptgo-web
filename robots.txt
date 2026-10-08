@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+# PENDIENTE: sustituir DOMINIO-DEL-CLIENTE.es por el dominio real
+Sitemap: https://DOMINIO-DEL-CLIENTE.es/sitemap.xml
