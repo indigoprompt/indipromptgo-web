@@ -77,7 +77,7 @@
     var vs = 'attribute vec2 a;void main(){gl_Position=vec4(a,0.,1.);}';
     var fs = [
       'precision mediump float;',
-      'uniform vec2 R;uniform float T;uniform float P;uniform vec2 M;uniform float O;',
+      'uniform vec2 R;uniform float T;uniform float P;uniform vec2 M;uniform float O;uniform float OY;',
       'mat2 rot(float a){float c=cos(a),s=sin(a);return mat2(c,-s,s,c);}',
       'float box(vec3 p,vec3 b,float r){vec3 q=abs(p)-b;return length(max(q,0.))+min(max(q.x,max(q.y,q.z)),0.)-r;}',
       'float tor(vec3 p,vec2 t){vec2 q=vec2(length(p.xz)-t.x,p.y);return length(q)-t.y;}',
@@ -93,15 +93,15 @@
       'void main(){',
       ' vec2 uv=(gl_FragCoord.xy-.5*R)/R.y;',
       ' vec2 bu=uv;',
-      ' uv.x-=O;uv.y-=(R.x<R.y?.2:0.);',
+      ' uv.x-=O;uv.y-=OY;',
       // fondo: degradado y aurora suave
       ' float g=exp(-3.2*length(uv*vec2(.8,1.)));',
       ' float au=.5+.5*sin(bu.x*2.2+T*.25+sin(bu.y*3.1-T*.2)*1.4);',
-      ' vec3 col=vec3(0.)+vec3(0.,.12,.55)*g*.9+vec3(0.,.05,.25)*au*smoothstep(1.2,-.4,bu.y+.2)*.55;',
-      ' vec3 ro=vec3(0.,0.,(R.x<R.y?7.4:6.2)),rd=normalize(vec3(uv,-1.75));',
+      ' vec3 col=vec3(0.,.07,.32)*g*.6+vec3(0.,.03,.14)*au*smoothstep(1.2,-.4,bu.y+.2)*.4;',
+      ' vec3 ro=vec3(0.,0.,(R.x<R.y?8.:6.6)),rd=normalize(vec3(uv,-1.75));',
       ' float t=0.,dm=9.;bool hit=false;',
       ' for(int i=0;i<' + STEPS + ';i++){vec3 p=ro+rd*t;float h=map(p);dm=min(dm,h);if(h<.002){hit=true;break;}t+=h*.9;if(t>10.)break;}',
-      ' col+=vec3(.15,.35,1.)*.18/(1.+dm*dm*40.);',
+      ' col+=vec3(.15,.35,1.)*.12/(1.+dm*dm*40.);',
       ' if(hit){vec3 p=ro+rd*t;vec3 n=nor(p);vec3 q=tf(p);',
       '  float fr=pow(1.-max(dot(n,-rd),0.),2.4);',
       '  vec3 l=normalize(vec3(.6,.8,.6));float df=max(dot(n,l),0.);',
@@ -111,7 +111,7 @@
       '  vec3 rim=mix(vec3(0.,.28,1.),vec3(.48,.64,1.),ir);',
       '  vec3 gq=abs(fract(q*6.)-.5);float grid=smoothstep(.47,.5,max(gq.x,max(gq.y,gq.z)));',
       '  float scan=smoothstep(.0,.04,abs(fract(q.y*1.6-T*.35)-.5)-.44);',
-      '  col=base+rim*fr*1.25+vec3(.75,.85,1.)*sp*.9+vec3(.3,.5,1.)*grid*(.25+fr*.5)+vec3(.4,.6,1.)*scan*.35;',
+      '  col=(base+rim*fr*1.1+vec3(.75,.85,1.)*sp*.7+vec3(.3,.5,1.)*grid*(.18+fr*.4)+vec3(.4,.6,1.)*scan*.25)*.8;',
       ' }',
       ' col*=1.-.25*dot(bu*.6,bu*.6);',
       ' col=pow(col,vec3(.95));',
@@ -129,7 +129,7 @@
     var buf = ctx.createBuffer(); ctx.bindBuffer(ctx.ARRAY_BUFFER, buf);
     ctx.bufferData(ctx.ARRAY_BUFFER, new Float32Array([-1,-1,3,-1,-1,3]), ctx.STATIC_DRAW);
     var loc = ctx.getAttribLocation(prog, 'a'); ctx.enableVertexAttribArray(loc); ctx.vertexAttribPointer(loc, 2, ctx.FLOAT, false, 0, 0);
-    var U = { R: ctx.getUniformLocation(prog, 'R'), T: ctx.getUniformLocation(prog, 'T'), P: ctx.getUniformLocation(prog, 'P'), M: ctx.getUniformLocation(prog, 'M'), O: ctx.getUniformLocation(prog, 'O') };
+    var U = { R: ctx.getUniformLocation(prog, 'R'), T: ctx.getUniformLocation(prog, 'T'), P: ctx.getUniformLocation(prog, 'P'), M: ctx.getUniformLocation(prog, 'M'), O: ctx.getUniformLocation(prog, 'O'), OY: ctx.getUniformLocation(prog, 'OY') };
 
     var scale = small ? 0.5 : 0.62, minScale = 0.3;
     var dpr = Math.min(w.devicePixelRatio || 1, 1.5);
@@ -142,7 +142,7 @@
       ctx.viewport(0, 0, cv.width, cv.height);
       ctx.uniform2f(U.R, cv.width, cv.height);
       var aspect = cw / ch;
-      ctx.uniform1f(U.O, aspect > 1.1 ? Math.min(aspect * 0.34, 0.66) : 0.0);
+      if(aspect > 1.1){ ctx.uniform1f(U.O, aspect * 0.5 - 0.22); ctx.uniform1f(U.OY, -0.28); } else { ctx.uniform1f(U.O, 0.22); ctx.uniform1f(U.OY, -0.46); }
     }
     size();
     w.addEventListener('resize', size, { passive: true });
@@ -217,31 +217,12 @@
     } else { load(); }
   })();
 
-  /* ---------- Tarjetas de trabajos: inclinación y foco de luz ---------- */
-  if(fine && !reduce){
-    $$('.work').forEach(function(card){
-      var rect = null;
-      card.addEventListener('pointerenter', function(){ rect = card.getBoundingClientRect(); });
-      card.addEventListener('pointermove', function(e){
-        if(!rect) rect = card.getBoundingClientRect();
-        var x = (e.clientX - rect.left) / rect.width, y = (e.clientY - rect.top) / rect.height;
-        card.style.setProperty('--mx', (x * 100).toFixed(1) + '%');
-        card.style.setProperty('--my', (y * 100).toFixed(1) + '%');
-        card.style.setProperty('--ry', ((x - 0.5) * 5).toFixed(2) + 'deg');
-        card.style.setProperty('--rx', ((0.5 - y) * 4).toFixed(2) + 'deg');
-      });
-      card.addEventListener('pointerleave', function(){ rect = null; card.style.setProperty('--rx', '0deg'); card.style.setProperty('--ry', '0deg'); });
-    });
-  }
-
   /* ---------- Filtro por tipo de web ---------- */
   var works = $$('#works .work'), note = $('#filterNote'), noteLabel = $('#filterLabel');
   function setFilter(cat, label){
     works.forEach(function(wk){
       var cats = (wk.getAttribute('data-cat') || '').split(' ');
-      var empty = wk.classList.contains('work-empty');
-      wk.hidden = cat ? cats.indexOf(cat) === -1 : empty;
-      wk.classList.toggle('work-wide', !cat && wk === works[0]);
+      wk.hidden = cat ? cats.indexOf(cat) === -1 : cats.indexOf('local') !== -1;
       if(!wk.hidden) wk.classList.add('in');
     });
     $$('.cat').forEach(function(b){ b.setAttribute('aria-pressed', String(b.getAttribute('data-filter') === cat)); });
@@ -249,9 +230,9 @@
   }
   $$('.cat').forEach(function(b){
     b.setAttribute('aria-pressed', 'false');
-    b.setAttribute('aria-label', b.querySelector('h3').textContent + ': ' + parseInt(b.querySelector('.cat-count').textContent, 10) + ' demos. Ver en trabajos');
+    b.setAttribute('aria-label', b.querySelector('.cat-name').textContent + ': ' + parseInt(b.querySelector('.cat-count').textContent, 10) + ' demos. Ver en trabajos');
     b.addEventListener('click', function(){
-      setFilter(b.getAttribute('data-filter'), b.querySelector('h3').textContent);
+      setFilter(b.getAttribute('data-filter'), b.querySelector('.cat-name').textContent);
       $('#trabajos').scrollIntoView({ behavior: reduce ? 'auto' : 'smooth' });
     });
   });

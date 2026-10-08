@@ -45,25 +45,27 @@
 
 <!-- 1. Barra de oferta -->
 <div class="offer" role="region" aria-label="Oferta">
-  <p><span class="offer-dot" aria-hidden="true"></span><span class="mono">Demo gratuita</span> <span class="offer-long">Te enseñamos cómo podría ser la web de tu negocio antes de que decidas nada.</span><span class="offer-short">Para tu negocio.</span> <a href="https://wa.me/34621206210?text=Hola%2C%20quiero%20pedir%20la%20demo%20gratis%20de%20la%20web%20de%20mi%20negocio" target="_blank" rel="noopener">Pídela por WhatsApp <span aria-hidden="true">&rarr;</span></a></p>
+  <p><span class="offer-tag">Demo gratuita</span><span class="offer-long">Te enseñamos cómo podría ser la web de tu negocio antes de decidir nada.</span><span class="offer-short">Para tu negocio.</span><a href="https://wa.me/34621206210?text=Hola%2C%20quiero%20pedir%20la%20demo%20gratis%20de%20la%20web%20de%20mi%20negocio" target="_blank" rel="noopener">Pedirla <span aria-hidden="true">&rarr;</span></a></p>
 </div>
 
-<!-- Cabecera flotante -->
+<!-- Cabecera -->
 <header class="nav" id="nav">
   <a class="brand" href="#inicio" aria-label="Índigo Prompt Studio, ir al inicio">
-    <img src="assets/img/d-mark.webp" width="32" height="32" alt="" decoding="async">
+    <img src="assets/img/d-mark.webp" width="28" height="28" alt="" decoding="async">
     <span class="brand-name">Índigo Prompt <b>Studio</b></span>
   </a>
-  <nav class="nav-links" aria-label="Secciones">
-    <a href="#trabajos">Trabajos</a><a href="#tipos">Tipos de web</a><a href="#proceso">Proceso</a><a href="#precio">Precio</a><a href="#faq">Preguntas</a>
-  </nav>
-  <div class="nav-actions">
-    <button class="fab-btn" type="button" id="btnSearch" aria-label="Buscar en la web" aria-haspopup="dialog" aria-controls="search">
-      <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="M16 16l4.5 4.5"/></svg>
+  <div class="nav-center">
+    <button class="pill-btn search-btn" type="button" id="btnSearch" aria-label="Buscar en la web" aria-haspopup="dialog" aria-controls="search">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="M16 16l4.5 4.5"/></svg><kbd aria-hidden="true">/</kbd>
     </button>
+    <nav class="nav-links" aria-label="Secciones">
+      <a href="#trabajos">Trabajos</a><a href="#tipos">Tipos</a><a href="#proceso">Proceso</a><a href="#precio">Precio</a><a href="#faq">Preguntas</a>
+    </nav>
+  </div>
+  <div class="nav-actions">
     <a class="btn btn-sm btn-primary nav-cta" href="https://wa.me/34621206210?text=Hola%2C%20quiero%20pedir%20la%20demo%20gratis%20de%20la%20web%20de%20mi%20negocio" target="_blank" rel="noopener">Demo gratis</a>
-    <button class="fab-btn" type="button" id="btnMenu" aria-label="Abrir menú" aria-haspopup="dialog" aria-controls="menu" aria-expanded="false">
-      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 8h16M4 16h10"/></svg>
+    <button class="pill-btn menu-btn" type="button" id="btnMenu" aria-label="Abrir menú" aria-haspopup="dialog" aria-controls="menu" aria-expanded="false">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 9h14M5 15h14"/></svg>
     </button>
   </div>
 </header>
@@ -72,123 +74,93 @@
 
 <!-- 2. Portada -->
 <section class="hero" id="inicio" aria-labelledby="h1">
-  <div class="hero-stage" aria-hidden="true">
-    <canvas id="gl" width="16" height="9"></canvas>
-    <div class="hero-fallback"><img src="assets/img/hero-fallback.webp" width="900" height="900" alt="" decoding="async"></div>
-    <div class="hero-vignette"></div>
-  </div>
-  <div class="hero-inner wrap">
-    <p class="kicker mono reveal-now">Estudio de webs a medida &middot; Valencia</p>
-    <h1 id="h1" class="hero-title"><span class="line">Webs que no parecen</span> <span class="line accent">de plantilla</span></h1>
-    <p class="lead">Diseñamos y construimos la web de tu negocio desde cero: con tu identidad, rápida en el móvil y pensada para que te escriban.</p>
-    <div class="hero-cta">
-      <a class="btn btn-primary btn-lg" href="https://wa.me/34621206210?text=Hola%2C%20quiero%20pedir%20la%20demo%20gratis%20de%20la%20web%20de%20mi%20negocio" target="_blank" rel="noopener">Pide tu demo gratis
-        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h13M13 6l6 6-6 6"/></svg></a>
-      <a class="btn btn-ghost btn-lg" href="#trabajos">Ver trabajos</a>
+  <div class="hero-card">
+    <div class="hero-stage" aria-hidden="true">
+      <canvas id="gl" width="16" height="9"></canvas>
+      <div class="hero-fallback"><img src="assets/img/hero-fallback.webp" width="900" height="900" alt="" decoding="async"></div>
     </div>
-    <ul class="pills" aria-label="Lo esencial">
-      <li>Diseño propio</li><li>Móvil primero</li><li>Carga rápida</li><li>Tú apruebas todo</li>
-    </ul>
+    <div class="hero-inner">
+      <p class="chip">Webs a medida &middot; Valencia</p>
+      <h1 id="h1" class="grad">Webs a medida que no parecen de plantilla</h1>
+      <p class="lead">Con tu identidad, rápidas en el móvil y pensadas para que te escriban.</p>
+      <div class="hero-cta">
+        <a class="btn btn-primary" href="https://wa.me/34621206210?text=Hola%2C%20quiero%20pedir%20la%20demo%20gratis%20de%20la%20web%20de%20mi%20negocio" target="_blank" rel="noopener">Pide tu demo gratis <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h13M13 6l6 6-6 6"/></svg></a>
+        <a class="btn btn-ghost" href="#trabajos">Ver trabajos</a>
+      </div>
+    </div>
+    <button class="video-chip" type="button" id="btnVideo" aria-label="Ver el vídeo explicativo" aria-haspopup="dialog" aria-controls="videoModal">
+      <span class="video-thumb"><img src="assets/video/poster.webp" width="540" height="960" alt="" loading="lazy" decoding="async"><span class="play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5.5v13l10-6.5z"/></svg></span></span>
+      <span class="video-txt"><small>Vídeo</small><b>Qué hacemos, en corto</b></span>
+    </button>
   </div>
-  <button class="video-chip" type="button" id="btnVideo" aria-label="Ver el vídeo explicativo" aria-haspopup="dialog" aria-controls="videoModal">
-    <span class="video-thumb"><img src="assets/video/poster.webp" width="540" height="960" alt="" loading="lazy" decoding="async"><span class="play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5.5v13l10-6.5z"/></svg></span></span>
-    <span class="video-txt"><span class="mono">Vídeo</span><b>Qué hacemos, en corto</b></span>
-  </button>
-  <a class="scroll-cue mono" href="#trabajos" aria-label="Bajar a trabajos"><span></span>Scroll</a>
 </section>
-
-<!-- Cinta -->
-<div class="ticker" aria-hidden="true"><div class="ticker-track">
-  <span>Tiendas online</span><i></i><span>Clínicas</span><i></i><span>Inmobiliarias</span><i></i><span>Gimnasios</span><i></i><span>Moda</span><i></i><span>Restaurantes</span><i></i><span>Marca personal</span><i></i>
-  <span>Tiendas online</span><i></i><span>Clínicas</span><i></i><span>Inmobiliarias</span><i></i><span>Gimnasios</span><i></i><span>Moda</span><i></i><span>Restaurantes</span><i></i><span>Marca personal</span><i></i>
-</div></div>
 
 <!-- 3. Trabajos -->
 <section class="sec" id="trabajos" aria-labelledby="t-trabajos">
   <div class="wrap">
-    <div class="sec-head">
-      <p class="eyebrow mono">01 &middot; Trabajos</p>
-      <h2 id="t-trabajos">Así se ve una web <span class="accent">hecha a medida</span></h2>
-      <p class="sec-lead">Webs de demostración que hemos diseñado y construido para distintos sectores. Pasa el cursor o toca una tarjeta para verla de cerca.</p>
+    <div class="sec-head row">
+      <div>
+        <p class="chip">Demos por sector</p>
+        <h2 id="t-trabajos" class="grad">Trabajos</h2>
+      </div>
+      <div class="filter-note" id="filterNote" hidden><span id="filterLabel"></span><button type="button" class="link-btn" id="filterClear">Ver todos</button></div>
     </div>
-    <div class="filter-note" id="filterNote" hidden><span class="mono" id="filterLabel"></span><button type="button" class="link-btn" id="filterClear">Ver todos</button></div>
     <div class="works" id="works">
-      <article class="work work-wide" data-cat="tienda" tabindex="-1">
+      <article class="work" data-cat="tienda">
         <button class="work-hit" type="button" data-open="virion" aria-label="Ampliar la demo de tienda de joyería Virion"></button>
         <div class="work-media">
-          <img src="assets/img/virion-720.webp" srcset="assets/img/virion-720.webp 720w, assets/img/virion-1200.webp 1200w" sizes="(max-width: 860px) 92vw, 1100px" width="1200" height="750" alt="Portada de la demo de tienda de joyería para Virion con una pulsera en 3D" loading="lazy" decoding="async">
+          <img src="assets/img/virion-720.webp" srcset="assets/img/virion-720.webp 720w, assets/img/virion-1200.webp 1200w" sizes="(max-width: 640px) 92vw, (max-width: 1024px) 46vw, 400px" width="1200" height="750" alt="Portada de la demo de tienda de joyería para Virion con una pulsera en 3D" loading="lazy" decoding="async">
+          <span class="badge">Demo</span>
         </div>
-        <div class="work-info">
-          <span class="badge mono">Demo</span>
-          <p class="mono work-cat">Tienda de joyería</p>
-          <h3>Virion</h3>
-          <p>Tienda online con producto en 3D que gira con el scroll.</p>
-        </div>
-        <span class="spot" aria-hidden="true"></span>
+        <div class="work-info"><h3>Virion</h3><span class="tagline">Tienda de joyería</span></div>
       </article>
-      <article class="work" data-cat="salud" tabindex="-1">
+      <article class="work" data-cat="salud">
         <button class="work-hit" type="button" data-open="dental" aria-label="Ampliar la demo de clínica dental NÁCAR Dental"></button>
         <div class="work-media">
-          <img src="assets/img/dental-720.webp" srcset="assets/img/dental-720.webp 720w, assets/img/dental-1200.webp 1200w" sizes="(max-width: 860px) 92vw, 560px" width="1200" height="750" alt="Portada de la demo de clínica dental NÁCAR Dental" loading="lazy" decoding="async">
+          <img src="assets/img/dental-720.webp" srcset="assets/img/dental-720.webp 720w, assets/img/dental-1200.webp 1200w" sizes="(max-width: 640px) 92vw, (max-width: 1024px) 46vw, 400px" width="1200" height="750" alt="Portada de la demo de clínica dental NÁCAR Dental" loading="lazy" decoding="async">
           <img class="work-app" src="assets/img/app-dental.webp" width="260" height="547" alt="" loading="lazy" decoding="async">
+          <span class="badge">Demo</span>
         </div>
-        <div class="work-info">
-          <span class="badge mono">Demo</span>
-          <p class="mono work-cat">Clínica dental</p>
-          <h3>NÁCAR Dental</h3>
-          <p>Web limpia y luminosa, con versión app para el móvil.</p>
-        </div>
-        <span class="spot" aria-hidden="true"></span>
+        <div class="work-info"><h3>NÁCAR Dental</h3><span class="tagline">Clínica dental</span></div>
       </article>
-      <article class="work" data-cat="deporte" tabindex="-1">
+      <article class="work" data-cat="deporte">
         <button class="work-hit" type="button" data-open="boxeo" aria-label="Ampliar la demo de gimnasio de boxeo FM Boxing"></button>
         <div class="work-media">
-          <img src="assets/img/boxeo-720.webp" srcset="assets/img/boxeo-720.webp 720w, assets/img/boxeo-1200.webp 1200w" sizes="(max-width: 860px) 92vw, 560px" width="1200" height="750" alt="Portada de la demo de gimnasio de boxeo FM Boxing" loading="lazy" decoding="async">
+          <img src="assets/img/boxeo-720.webp" srcset="assets/img/boxeo-720.webp 720w, assets/img/boxeo-1200.webp 1200w" sizes="(max-width: 640px) 92vw, (max-width: 1024px) 46vw, 400px" width="1200" height="750" alt="Portada de la demo de gimnasio de boxeo FM Boxing" loading="lazy" decoding="async">
           <img class="work-app" src="assets/img/app-boxeo.webp" width="260" height="547" alt="" loading="lazy" decoding="async">
+          <span class="badge">Demo</span>
         </div>
-        <div class="work-info">
-          <span class="badge mono">Demo</span>
-          <p class="mono work-cat">Gimnasio de boxeo</p>
-          <h3>FM Boxing</h3>
-          <p>Imagen con fuerza y reservas a un toque.</p>
-        </div>
-        <span class="spot" aria-hidden="true"></span>
+        <div class="work-info"><h3>FM Boxing</h3><span class="tagline">Gimnasio de boxeo</span></div>
       </article>
-      <article class="work" data-cat="inmo" tabindex="-1">
+      <article class="work" data-cat="inmo">
         <button class="work-hit" type="button" data-open="inmo" aria-label="Ampliar la demo de inmobiliaria AURA Estates"></button>
         <div class="work-media">
-          <img src="assets/img/inmo-720.webp" srcset="assets/img/inmo-720.webp 720w, assets/img/inmo-1200.webp 1200w" sizes="(max-width: 860px) 92vw, 560px" width="1200" height="750" alt="Portada de la demo de inmobiliaria AURA Estates" loading="lazy" decoding="async">
+          <img src="assets/img/inmo-720.webp" srcset="assets/img/inmo-720.webp 720w, assets/img/inmo-1200.webp 1200w" sizes="(max-width: 640px) 92vw, (max-width: 1024px) 46vw, 400px" width="1200" height="750" alt="Portada de la demo de inmobiliaria AURA Estates" loading="lazy" decoding="async">
           <img class="work-app" src="assets/img/app-inmo.webp" width="260" height="547" alt="" loading="lazy" decoding="async">
+          <span class="badge">Demo</span>
         </div>
-        <div class="work-info">
-          <span class="badge mono">Demo</span>
-          <p class="mono work-cat">Inmobiliaria</p>
-          <h3>AURA Estates</h3>
-          <p>Vídeo a pantalla completa y buscador de inmuebles.</p>
-        </div>
-        <span class="spot" aria-hidden="true"></span>
+        <div class="work-info"><h3>AURA Estates</h3><span class="tagline">Inmobiliaria</span></div>
       </article>
-      <article class="work" data-cat="tienda moda" tabindex="-1">
+      <article class="work" data-cat="tienda moda">
         <button class="work-hit" type="button" data-open="ropa" aria-label="Ampliar la demo de tienda de moda ATELIER NORTE"></button>
         <div class="work-media">
-          <img src="assets/img/ropa-720.webp" srcset="assets/img/ropa-720.webp 720w, assets/img/ropa-1200.webp 1200w" sizes="(max-width: 860px) 92vw, 560px" width="1200" height="750" alt="Portada de la demo de tienda de moda ATELIER NORTE" loading="lazy" decoding="async">
+          <img src="assets/img/ropa-720.webp" srcset="assets/img/ropa-720.webp 720w, assets/img/ropa-1200.webp 1200w" sizes="(max-width: 640px) 92vw, (max-width: 1024px) 46vw, 400px" width="1200" height="750" alt="Portada de la demo de tienda de moda ATELIER NORTE" loading="lazy" decoding="async">
           <img class="work-app" src="assets/img/app-ropa.webp" width="260" height="547" alt="" loading="lazy" decoding="async">
+          <span class="badge">Demo</span>
         </div>
-        <div class="work-info">
-          <span class="badge mono">Demo</span>
-          <p class="mono work-cat">Moda</p>
-          <h3>ATELIER NORTE</h3>
-          <p>Tienda de ropa con catálogo, fichas y cesta.</p>
-        </div>
-        <span class="spot" aria-hidden="true"></span>
+        <div class="work-info"><h3>ATELIER NORTE</h3><span class="tagline">Moda</span></div>
       </article>
-      <article class="work work-empty" data-cat="local" tabindex="-1" hidden>
-        <div class="work-info">
-          <p class="mono work-cat">Restaurante y local</p>
-          <h3>Aún sin demo publicada</h3>
-          <p>La primera puede ser la de tu negocio. Pídenos una demo gratis y la diseñamos para ti.</p>
-          <a class="btn btn-primary btn-sm" href="https://wa.me/34621206210?text=Hola%2C%20quiero%20pedir%20la%20demo%20gratis%20de%20la%20web%20de%20mi%20restaurante" target="_blank" rel="noopener">Pedir mi demo</a>
-        </div>
+      <article class="work work-cta" data-cat="cta">
+        <a class="work-cta-in" href="https://wa.me/34621206210?text=Hola%2C%20quiero%20pedir%20la%20demo%20gratis%20de%20la%20web%20de%20mi%20negocio" target="_blank" rel="noopener">
+          <span class="plus" aria-hidden="true">+</span>
+          <span><b>Tu negocio aquí</b><small>Pide una demo gratis para tu sector</small></span>
+        </a>
+      </article>
+      <article class="work work-cta" data-cat="local" hidden>
+        <a class="work-cta-in" href="https://wa.me/34621206210?text=Hola%2C%20quiero%20pedir%20la%20demo%20gratis%20de%20la%20web%20de%20mi%20restaurante" target="_blank" rel="noopener">
+          <span class="plus" aria-hidden="true">+</span>
+          <span><b>Restaurante y local: aún sin demo</b><small>La primera puede ser la tuya</small></span>
+        </a>
       </article>
     </div>
   </div>
@@ -197,20 +169,21 @@
 <!-- Escena 3D guiada por scroll -->
 <section class="scrolly" id="scroll-3d" aria-labelledby="t-3d">
   <div class="scrolly-sticky">
-    <div class="wrap scrolly-grid">
-      <div class="scrolly-copy">
-        <p class="eyebrow mono">Demo &middot; Tienda de joyería</p>
-        <h2 id="t-3d">Tu producto, <span class="accent">en 3D</span>, girando con el scroll</h2>
-        <ol class="steps-mini">
-          <li class="on"><b>Se ve desde todos los ángulos.</b> El cliente lo mira como si lo tuviera en la mano.</li>
-          <li><b>Lo mueve quien navega.</b> La pieza gira al ritmo del scroll, sin botones raros.</li>
-          <li><b>Funciona en el navegador.</b> Sin apps ni descargas, también en el móvil.</li>
-        </ol>
-      </div>
-      <div class="scrolly-art">
-        <div class="ring" aria-hidden="true"></div>
-        <canvas id="seq" width="640" height="360" role="img" aria-label="Pulsera de la demo de Virion girando en 3D según se desplaza la página"></canvas>
-        <p class="seq-meter mono" aria-hidden="true"><span id="seqPct">000</span> / 360&deg;</p>
+    <div class="wrap">
+      <div class="scrolly-card">
+        <div class="scrolly-copy">
+          <p class="chip">Demo &middot; Tienda de joyería</p>
+          <h2 id="t-3d" class="grad">Tu producto en 3D, girando con el scroll</h2>
+          <ol class="steps-mini">
+            <li class="on">Se ve desde todos los ángulos</li>
+            <li>Gira al ritmo del scroll</li>
+            <li>Funciona en el navegador, también en el móvil</li>
+          </ol>
+        </div>
+        <div class="scrolly-art">
+          <canvas id="seq" width="640" height="360" role="img" aria-label="Pulsera de la demo de Virion girando en 3D según se desplaza la página"></canvas>
+          <p class="seq-meter" aria-hidden="true"><span id="seqPct">000</span>&deg;</p>
+        </div>
       </div>
     </div>
   </div>
@@ -220,41 +193,17 @@
 <section class="sec" id="tipos" aria-labelledby="t-tipos">
   <div class="wrap">
     <div class="sec-head">
-      <p class="eyebrow mono">02 &middot; Tipos de web</p>
-      <h2 id="t-tipos">Hacemos webs para <span class="accent">tu tipo de negocio</span></h2>
-      <p class="sec-lead">Cada sector necesita cosas distintas. El número indica cuántas demos tenemos hechas de ese tipo; toca una categoría para verlas.</p>
+      <p class="chip">Por sector</p>
+      <h2 id="t-tipos" class="grad">Tipos de web que hacemos</h2>
+      <p class="sec-lead">El número son las demos hechas. Toca una para verlas.</p>
     </div>
     <div class="cats">
-      <button class="cat" type="button" data-filter="tienda" style="--h:222">
-        <span class="cat-count mono">02</span>
-        <h3>Tienda online</h3>
-        <p>Catálogo, fichas de producto, cesta y pago.</p>
-      </button>
-      <button class="cat" type="button" data-filter="salud" style="--h:200">
-        <span class="cat-count mono">01</span>
-        <h3>Clínica y salud</h3>
-        <p>Tratamientos claros, confianza y cita fácil.</p>
-      </button>
-      <button class="cat" type="button" data-filter="inmo" style="--h:240">
-        <span class="cat-count mono">01</span>
-        <h3>Inmobiliaria</h3>
-        <p>Fichas de inmuebles, buscador y contacto.</p>
-      </button>
-      <button class="cat" type="button" data-filter="deporte" style="--h:212">
-        <span class="cat-count mono">01</span>
-        <h3>Gimnasio y deporte</h3>
-        <p>Clases, tarifas y reservas desde el móvil.</p>
-      </button>
-      <button class="cat" type="button" data-filter="moda" style="--h:232">
-        <span class="cat-count mono">01</span>
-        <h3>Moda y marca personal</h3>
-        <p>Imagen cuidada que transmite quién eres.</p>
-      </button>
-      <button class="cat" type="button" data-filter="local" style="--h:205">
-        <span class="cat-count mono">00</span>
-        <h3>Restaurante y local</h3>
-        <p>Carta, horarios, ubicación y reservas.</p>
-      </button>
+      <button class="cat" type="button" data-filter="tienda"><span class="cat-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 8h14l-1 12H6z"/><path d="M9 8a3 3 0 0 1 6 0"/></svg></span><span class="cat-txt"><span class="cat-name">Tienda online</span><span>Catálogo, cesta y pago</span></span><span class="cat-count">2</span></button>
+      <button class="cat" type="button" data-filter="salud"><span class="cat-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span><span class="cat-txt"><span class="cat-name">Clínica y salud</span><span>Confianza y cita fácil</span></span><span class="cat-count">1</span></button>
+      <button class="cat" type="button" data-filter="inmo"><span class="cat-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 11l8-6 8 6v9H4z"/><path d="M10 20v-5h4v5"/></svg></span><span class="cat-txt"><span class="cat-name">Inmobiliaria</span><span>Fichas y buscador</span></span><span class="cat-count">1</span></button>
+      <button class="cat" type="button" data-filter="deporte"><span class="cat-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 12h3M17 12h3M7 8v8M17 8v8M7 12h10"/></svg></span><span class="cat-txt"><span class="cat-name">Gimnasio y deporte</span><span>Clases y reservas</span></span><span class="cat-count">1</span></button>
+      <button class="cat" type="button" data-filter="moda"><span class="cat-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M9 4l3 2 3-2 4 3-2 3-2-1v11H9V9l-2 1-2-3z"/></svg></span><span class="cat-txt"><span class="cat-name">Moda y marca personal</span><span>Imagen que te representa</span></span><span class="cat-count">1</span></button>
+      <button class="cat" type="button" data-filter="local"><span class="cat-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 4v7a2 2 0 0 0 4 0V4M9 11v9M16 4c-2 2-2 6 0 8v8"/></svg></span><span class="cat-txt"><span class="cat-name">Restaurante y local</span><span>Carta, horario y reservas</span></span><span class="cat-count">0</span></button>
     </div>
   </div>
 </section>
@@ -263,16 +212,16 @@
 <section class="sec" id="proceso" aria-labelledby="t-proceso">
   <div class="wrap">
     <div class="sec-head">
-      <p class="eyebrow mono">03 &middot; Proceso</p>
-      <h2 id="t-proceso">De la idea <span class="accent">a la web</span></h2>
+      <p class="chip">Proceso</p>
+      <h2 id="t-proceso" class="grad">De la idea a la web</h2>
       <p class="sec-lead">Plazo según proyecto: te lo decimos antes de empezar.</p>
     </div>
     <ol class="process" id="process">
-      <li class="step"><span class="step-n">01</span><h3>Hablamos</h3><p>Nos cuentas por WhatsApp qué vendes, a quién y qué quieres conseguir con la web.</p></li>
-      <li class="step"><span class="step-n">02</span><h3>Demo gratis</h3><p>Te preparamos una demo para que veas el estilo antes de decidir nada.</p></li>
-      <li class="step"><span class="step-n">03</span><h3>Diseño y construcción</h3><p>Montamos tu web a medida. La revisas durante el proceso y pides cambios.</p></li>
-      <li class="step"><span class="step-n">04</span><h3>Comprobación</h3><p>La probamos en móviles y ordenadores reales: velocidad, textos, enlaces y formularios.</p></li>
-      <li class="step"><span class="step-n">05</span><h3>Publicación</h3><p>Con tu visto bueno, la publicamos en tu dominio y te explicamos cómo queda todo.</p></li>
+      <li class="step"><span class="step-n">01</span><h3>Hablamos</h3><p>Por WhatsApp: qué vendes y a quién.</p></li>
+      <li class="step"><span class="step-n">02</span><h3>Demo gratis</h3><p>Ves el estilo antes de decidir.</p></li>
+      <li class="step"><span class="step-n">03</span><h3>Diseño a medida</h3><p>La revisas y pides cambios.</p></li>
+      <li class="step"><span class="step-n">04</span><h3>Comprobación</h3><p>En móviles y ordenadores reales.</p></li>
+      <li class="step"><span class="step-n">05</span><h3>Publicación</h3><p>Con tu visto bueno, en tu dominio.</p></li>
     </ol>
   </div>
 </section>
@@ -281,18 +230,18 @@
 <section class="sec" id="incluye" aria-labelledby="t-incluye">
   <div class="wrap">
     <div class="sec-head">
-      <p class="eyebrow mono">04 &middot; Qué incluye</p>
-      <h2 id="t-incluye">Todo lo que una web <span class="accent">tiene que hacer bien</span></h2>
+      <p class="chip">Incluido</p>
+      <h2 id="t-incluye" class="grad">Qué incluye tu web</h2>
     </div>
     <ul class="bento">
-      <li class="tile tile-xl"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20l4-1 11-11-3-3L5 16z"/><path d="M14 6l3 3"/></svg><h3>Diseño a medida</h3><p>Con tu logo, tus colores y tu forma de hablar. Nada de plantillas repetidas.</p></li>
-      <li class="tile"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="7" y="3" width="10" height="18" rx="2.5"/><path d="M11 18h2"/></svg><h3>Móvil perfecto</h3><p>Pensada primero para el móvil, donde entra la mayoría de visitas.</p></li>
-      <li class="tile"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13 3L5 14h6l-1 7 8-11h-6z"/></svg><h3>Velocidad</h3><p>Imágenes optimizadas y carga diferida para que abra rápido.</p></li>
-      <li class="tile"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="M16 16l4.5 4.5M8.5 11h5M11 8.5v5"/></svg><h3>SEO base</h3><p>Títulos, descripciones, estructura y datos para que Google la entienda.</p></li>
-      <li class="tile"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 5h14M5 10h14M5 15h9M5 20h6"/></svg><h3>Textos</h3><p>Te ayudamos a escribir textos claros que expliquen lo que haces.</p></li>
-      <li class="tile"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="5.5" width="17" height="13" rx="2"/><path d="M4 7l8 6 8-6"/></svg><h3>Formulario de contacto</h3><p>Para que te escriban sin salir de la web.</p></li>
-      <li class="tile"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M3.5 12h17M12 3.5c2.5 2.6 2.5 14.4 0 17M12 3.5c-2.5 2.6-2.5 14.4 0 17"/></svg><h3>Dominio y alojamiento</h3><p>Te orientamos para elegirlos y que queden a tu nombre.</p></li>
-      <li class="tile tile-wide"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="5" width="13" height="10" rx="1.5"/><rect x="15.5" y="9" width="6" height="11" rx="1.5"/><path d="M6 19h6"/></svg><h3>Comprobada en dispositivos reales</h3><p>Antes de publicar la revisamos en móviles y ordenadores de verdad, no solo en el editor.</p></li>
+      <li class="tile"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20l4-1 11-11-3-3L5 16z"/><path d="M14 6l3 3"/></svg><h3>Diseño a medida</h3><p>Tu logo, tus colores, tu estilo.</p></li>
+      <li class="tile"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="7" y="3" width="10" height="18" rx="2.5"/><path d="M11 18h2"/></svg><h3>Móvil perfecto</h3><p>Pensada primero para el móvil.</p></li>
+      <li class="tile"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13 3L5 14h6l-1 7 8-11h-6z"/></svg><h3>Velocidad</h3><p>Imágenes ligeras y carga rápida.</p></li>
+      <li class="tile"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="M16 16l4.5 4.5"/></svg><h3>SEO base</h3><p>Para que Google la entienda.</p></li>
+      <li class="tile"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 6h14M5 11h14M5 16h9"/></svg><h3>Textos</h3><p>Claros y con tu forma de hablar.</p></li>
+      <li class="tile"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="5.5" width="17" height="13" rx="2"/><path d="M4 7l8 6 8-6"/></svg><h3>Formulario</h3><p>Para que te escriban desde la web.</p></li>
+      <li class="tile"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M3.5 12h17M12 3.5c2.5 2.6 2.5 14.4 0 17M12 3.5c-2.5 2.6-2.5 14.4 0 17"/></svg><h3>Dominio y alojamiento</h3><p>Te orientamos; quedan a tu nombre.</p></li>
+      <li class="tile"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="5" width="13" height="10" rx="1.5"/><rect x="15.5" y="9" width="6" height="11" rx="1.5"/></svg><h3>Dispositivos reales</h3><p>Comprobada antes de publicar.</p></li>
     </ul>
   </div>
 </section>
@@ -301,22 +250,13 @@
 <section class="sec" id="precio" aria-labelledby="t-precio">
   <div class="wrap">
     <div class="price-card">
-      <div class="price-l">
-        <p class="eyebrow mono">05 &middot; Precio</p>
-        <h2 id="t-precio">Una web a medida <span class="accent">desde</span></h2>
-        <p class="price"><span class="price-n">1.000&nbsp;&euro;</span><span class="price-tax mono">+ IVA</span></p>
-        <p class="price-note"><span class="mono tag">Orientativo</span> El precio final depende de lo que necesite tu web. Te lo decimos antes de empezar, sin sorpresas.</p>
-      </div>
-      <div class="price-r">
-        <ul class="checks">
-          <li>Diseño a medida con tu identidad</li>
-          <li>Adaptada a móvil y ordenador</li>
-          <li>Velocidad y SEO base</li>
-          <li>Formulario y enlace a WhatsApp</li>
-          <li>Comprobación en dispositivos reales</li>
-        </ul>
-        <a class="btn btn-primary btn-lg btn-block" href="https://wa.me/34621206210?text=Hola%2C%20quiero%20pedir%20presupuesto%20para%20una%20web%20a%20medida" target="_blank" rel="noopener">Pedir presupuesto</a>
-        <p class="price-small">Primero, la demo gratis. Luego decides.</p>
+      <p class="chip">Precio orientativo</p>
+      <h2 id="t-precio" class="grad">Una web a medida, desde</h2>
+      <p class="price"><span class="price-n">1.000&nbsp;&euro;</span><span class="price-tax">+ IVA</span></p>
+      <p class="price-note">El precio final depende de lo que necesite tu web. Te lo decimos antes de empezar.</p>
+      <div class="hero-cta">
+        <a class="btn btn-primary" href="https://wa.me/34621206210?text=Hola%2C%20quiero%20pedir%20presupuesto%20para%20una%20web%20a%20medida" target="_blank" rel="noopener">Pedir presupuesto</a>
+        <a class="btn btn-ghost" href="#incluye">Qué incluye</a>
       </div>
     </div>
   </div>
@@ -325,9 +265,9 @@
 <!-- 8. Preguntas frecuentes -->
 <section class="sec" id="faq" aria-labelledby="t-faq">
   <div class="wrap wrap-narrow">
-    <div class="sec-head">
-      <p class="eyebrow mono">06 &middot; Preguntas</p>
-      <h2 id="t-faq">Preguntas <span class="accent">frecuentes</span></h2>
+    <div class="sec-head center">
+      <p class="chip">Dudas</p>
+      <h2 id="t-faq" class="grad">Preguntas frecuentes</h2>
     </div>
     <div class="faq">
       <details><summary><h3>¿Qué necesito para empezar?</h3></summary><p>Saber qué vendes y a quién. Si tienes logo, colores, fotos y textos, mejor; si te falta algo, lo vemos juntos antes de empezar.</p></details>
@@ -345,12 +285,12 @@
   <div class="wrap">
     <div class="contact">
       <div class="contact-l">
-        <p class="eyebrow mono">07 &middot; Contacto</p>
-        <h2 id="t-contacto">Pide tu <span class="accent">demo gratis</span></h2>
-        <p class="sec-lead">Cuéntanos qué hace tu negocio y te enseñamos cómo podría ser tu web. Trato directo, sin compromiso.</p>
+        <p class="chip">Contacto</p>
+        <h2 id="t-contacto" class="grad">Pide tu demo gratis</h2>
+        <p class="sec-lead">Cuéntanos qué hace tu negocio. Sin compromiso.</p>
         <a class="wa-big" href="https://wa.me/34621206210?text=Hola%2C%20quiero%20pedir%20la%20demo%20gratis%20de%20la%20web%20de%20mi%20negocio" target="_blank" rel="noopener">
           <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3.6 20.4l1.2-4.1A8.4 8.4 0 1 1 8 19.6l-4.4.8z"/><path class="fill" d="M9.2 8.6c.2-.5.5-.5.8-.5.2 0 .4 0 .5.4l.7 1.6c.1.3 0 .5-.2.7l-.5.6c.8 1.5 2 2.5 3.6 3.2l.7-.8c.2-.2.4-.3.7-.2l1.6.8c.3.1.4.3.4.5 0 .7-.5 1.5-1.3 1.7-.9.3-2.3 0-4-.9-1.7-.9-3-2.3-3.7-3.8-.5-1.1-.5-2.3.3-3.3z"/></svg>
-          <span><span class="mono">WhatsApp</span><b>+34 621 206 210</b></span>
+          <span><small>WhatsApp</small><b>+34 621 206 210</b></span>
         </a>
       </div>
       <!--
@@ -363,12 +303,12 @@
       <form class="form" id="form" novalidate>
         <div class="field"><label for="f-nombre">Nombre</label><input id="f-nombre" name="nombre" type="text" autocomplete="name" required></div>
         <div class="field"><label for="f-negocio">Negocio</label><input id="f-negocio" name="negocio" type="text" autocomplete="organization" required></div>
-        <div class="field"><label for="f-tipo">Tipo de web</label>
+        <div class="field field-full"><label for="f-tipo">Tipo de web</label>
           <div class="select"><select id="f-tipo" name="tipo">
             <option>Tienda online</option><option>Clínica y salud</option><option>Inmobiliaria</option><option>Gimnasio y deporte</option><option>Moda y marca personal</option><option>Restaurante y local</option><option>Otro</option>
           </select></div></div>
-        <div class="field field-full"><label for="f-msg">Cuéntanos tu idea</label><textarea id="f-msg" name="mensaje" rows="4" required></textarea></div>
-        <button class="btn btn-primary btn-lg btn-block" type="submit">Enviar</button>
+        <div class="field field-full"><label for="f-msg">Tu idea</label><textarea id="f-msg" name="mensaje" rows="4" required></textarea></div>
+        <button class="btn btn-primary btn-block" type="submit">Enviar</button>
         <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
       </form>
     </div>
@@ -380,7 +320,7 @@
 <footer class="foot">
   <div class="wrap foot-grid">
     <div class="foot-brand">
-      <img src="assets/img/logo.webp" width="260" height="149" alt="Logotipo de Índigo Prompt Studio" loading="lazy" decoding="async">
+      <img src="assets/img/logo.webp" width="160" height="92" alt="Logotipo de Índigo Prompt Studio" loading="lazy" decoding="async">
       <p>Webs a medida para negocios. Valencia.</p>
     </div>
     <nav class="foot-nav" aria-label="Pie de página">
@@ -393,33 +333,24 @@
         <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3.6 20.4l1.2-4.1A8.4 8.4 0 1 1 8 19.6l-4.4.8z"/></svg><span>WhatsApp</span></a>
     </div>
   </div>
-  <div class="wrap foot-fine mono"><span>Índigo Prompt Studio &middot; IndipromptGo</span><span>Los trabajos marcados como demo son webs de demostración.</span></div>
+  <div class="wrap foot-fine"><span>Índigo Prompt Studio &middot; IndipromptGo</span><span>Los trabajos marcados como demo son webs de demostración.</span></div>
 </footer>
 
-<!-- Botón flotante WhatsApp -->
 <a class="fab-wa" href="https://wa.me/34621206210?text=Hola%2C%20quiero%20pedir%20la%20demo%20gratis%20de%20la%20web%20de%20mi%20negocio" target="_blank" rel="noopener" aria-label="Escribir por WhatsApp">
   <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3.6 20.4l1.2-4.1A8.4 8.4 0 1 1 8 19.6l-4.4.8z"/><path class="fill" d="M9.2 8.6c.2-.5.5-.5.8-.5.2 0 .4 0 .5.4l.7 1.6c.1.3 0 .5-.2.7l-.5.6c.8 1.5 2 2.5 3.6 3.2l.7-.8c.2-.2.4-.3.7-.2l1.6.8c.3.1.4.3.4.5 0 .7-.5 1.5-1.3 1.7-.9.3-2.3 0-4-.9-1.7-.9-3-2.3-3.7-3.8-.5-1.1-.5-2.3.3-3.3z"/></svg>
 </a>
 
-<!-- Menú -->
 <div class="overlay menu" id="menu" role="dialog" aria-modal="true" aria-label="Menú" hidden>
   <div class="overlay-bg" data-close></div>
   <div class="menu-panel">
-    <button class="fab-btn overlay-x" type="button" data-close aria-label="Cerrar menú"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+    <button class="pill-btn overlay-x" type="button" data-close aria-label="Cerrar menú"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
     <nav class="menu-links" aria-label="Menú principal">
-      <a href="#trabajos"><span class="mono">01</span>Trabajos</a>
-      <a href="#tipos"><span class="mono">02</span>Tipos de web</a>
-      <a href="#proceso"><span class="mono">03</span>Proceso</a>
-      <a href="#incluye"><span class="mono">04</span>Qué incluye</a>
-      <a href="#precio"><span class="mono">05</span>Precio</a>
-      <a href="#faq"><span class="mono">06</span>Preguntas</a>
-      <a href="#contacto"><span class="mono">07</span>Contacto</a>
+      <a href="#trabajos">Trabajos</a><a href="#tipos">Tipos de web</a><a href="#proceso">Proceso</a><a href="#incluye">Qué incluye</a><a href="#precio">Precio</a><a href="#faq">Preguntas</a><a href="#contacto">Contacto</a>
     </nav>
-    <a class="btn btn-primary btn-lg btn-block" href="https://wa.me/34621206210?text=Hola%2C%20quiero%20pedir%20la%20demo%20gratis%20de%20la%20web%20de%20mi%20negocio" target="_blank" rel="noopener">Pide tu demo gratis</a>
+    <a class="btn btn-primary btn-block" href="https://wa.me/34621206210?text=Hola%2C%20quiero%20pedir%20la%20demo%20gratis%20de%20la%20web%20de%20mi%20negocio" target="_blank" rel="noopener">Pide tu demo gratis</a>
   </div>
 </div>
 
-<!-- Búsqueda -->
 <div class="overlay search" id="search" role="dialog" aria-modal="true" aria-label="Buscar" hidden>
   <div class="overlay-bg" data-close></div>
   <div class="search-panel">
@@ -427,37 +358,35 @@
       <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="M16 16l4.5 4.5"/></svg>
       <label class="sr-only" for="q">Buscar sectores, secciones o preguntas</label>
       <input id="q" type="search" placeholder="Busca: tienda, clínica, precio, dominio..." autocomplete="off">
-      <button class="fab-btn fab-sm" type="button" data-close aria-label="Cerrar búsqueda"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+      <button class="pill-btn" type="button" data-close aria-label="Cerrar búsqueda"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
     </div>
     <ul class="search-results" id="results" role="listbox" aria-label="Resultados"></ul>
   </div>
 </div>
 
-<!-- Vídeo -->
 <div class="overlay video" id="videoModal" role="dialog" aria-modal="true" aria-label="Vídeo explicativo" hidden>
   <div class="overlay-bg" data-close></div>
   <div class="video-panel">
-    <button class="fab-btn overlay-x" type="button" data-close aria-label="Cerrar vídeo"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+    <button class="pill-btn overlay-x" type="button" data-close aria-label="Cerrar vídeo"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
     <video id="vid" width="540" height="960" controls playsinline preload="none" poster="assets/video/poster.webp">
       <source data-src="assets/video/anuncio-webs.mp4" type="video/mp4">
     </video>
   </div>
 </div>
 
-<!-- Visor de trabajos -->
 <div class="overlay viewer" id="viewer" role="dialog" aria-modal="true" aria-labelledby="viewerTitle" hidden>
   <div class="overlay-bg" data-close></div>
   <div class="viewer-panel">
-    <button class="fab-btn overlay-x" type="button" data-close aria-label="Cerrar"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+    <button class="pill-btn overlay-x" type="button" data-close aria-label="Cerrar"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
     <div class="viewer-media"><img id="viewerImg" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" width="1200" height="750" alt=""><img id="viewerApp" class="viewer-app" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" width="260" height="547" alt=""></div>
     <div class="viewer-info">
-      <span class="badge mono">Demo</span>
-      <p class="mono" id="viewerCat"></p>
+      <span class="badge static">Demo</span>
+      <p class="viewer-cat" id="viewerCat"></p>
       <h3 id="viewerTitle"></h3>
       <p id="viewerText"></p>
       <div class="viewer-cta">
-        <a class="btn btn-primary" id="viewerWa" href="#" target="_blank" rel="noopener">Quiero una así</a>
-        <a class="btn btn-ghost" id="viewerLive" href="#" target="_blank" rel="noopener" hidden>Ver demo en vivo</a>
+        <a class="btn btn-primary btn-sm" id="viewerWa" href="#" target="_blank" rel="noopener">Quiero una así</a>
+        <a class="btn btn-ghost btn-sm" id="viewerLive" href="#" target="_blank" rel="noopener" hidden>Ver demo en vivo</a>
       </div>
     </div>
   </div>
