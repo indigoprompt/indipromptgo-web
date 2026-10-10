@@ -1,0 +1,2 @@
+/* Generado por _build/build.py desde site-config.json. No editar a mano. */
+window.IPS={"formModo": "mailto", "formEndpoint": "", "campoTrampa": "empresa_web", "email": "indigoprompt@gmail.com", "instagramUrl": "https://www.instagram.com/indipromptgo/", "instagramCta": "https://www.instagram.com/indipromptgo/", "instagramUsuario": "indipromptgo", "palabraClave": "WEB", "dominio": "https://indigoprompt.github.io/indipromptgo-web"};

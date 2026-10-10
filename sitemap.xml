@@ -1,8 +1,47 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- PENDIENTE: sustituir DOMINIO-DEL-CLIENTE.es por el dominio real -->
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://DOMINIO-DEL-CLIENTE.es/</loc>
-    <lastmod>2026-10-08</lastmod>
+    <loc>https://indigoprompt.github.io/indipromptgo-web/aviso-legal.html</loc>
+    <lastmod>2026-10-10</lastmod>
+  </url>
+  <url>
+    <loc>https://indigoprompt.github.io/indipromptgo-web/contacto.html</loc>
+    <lastmod>2026-10-10</lastmod>
+  </url>
+  <url>
+    <loc>https://indigoprompt.github.io/indipromptgo-web/cookies.html</loc>
+    <lastmod>2026-10-10</lastmod>
+  </url>
+  <url>
+    <loc>https://indigoprompt.github.io/indipromptgo-web/</loc>
+    <lastmod>2026-10-10</lastmod>
+  </url>
+  <url>
+    <loc>https://indigoprompt.github.io/indipromptgo-web/precios.html</loc>
+    <lastmod>2026-10-10</lastmod>
+  </url>
+  <url>
+    <loc>https://indigoprompt.github.io/indipromptgo-web/preguntas.html</loc>
+    <lastmod>2026-10-10</lastmod>
+  </url>
+  <url>
+    <loc>https://indigoprompt.github.io/indipromptgo-web/privacidad.html</loc>
+    <lastmod>2026-10-10</lastmod>
+  </url>
+  <url>
+    <loc>https://indigoprompt.github.io/indipromptgo-web/proceso.html</loc>
+    <lastmod>2026-10-10</lastmod>
+  </url>
+  <url>
+    <loc>https://indigoprompt.github.io/indipromptgo-web/proyectos.html</loc>
+    <lastmod>2026-10-10</lastmod>
+  </url>
+  <url>
+    <loc>https://indigoprompt.github.io/indipromptgo-web/servicios.html</loc>
+    <lastmod>2026-10-10</lastmod>
+  </url>
+  <url>
+    <loc>https://indigoprompt.github.io/indipromptgo-web/sobre-mi.html</loc>
+    <lastmod>2026-10-10</lastmod>
   </url>
 </urlset>
