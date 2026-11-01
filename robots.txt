@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://indigoprompt.github.io/indipromptgo-web/sitemap.xml
+Sitemap: https://www.indipromptgo.com/sitemap.xml
